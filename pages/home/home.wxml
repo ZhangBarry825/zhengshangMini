@@ -1,0 +1,273 @@
+<!--pages/home/home.wxml-->
+<view class="home-container">
+    <view class="top-box">
+        <image class="logo-img" src="/static/images/logo.png"></image>
+        <image class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="swiper-box">
+        <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#F5CE30" indicator-color="#fff"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{background}}" wx:key="*this">
+                <swiper-item>
+                    <view class="swiper-item {{item}}">
+                        <image src="/static/images/background.png" class="backImg"></image>
+                        <view class="left">
+                            <view class="top">专业的互联网解决方案专家</view>
+                            <view class="down">立即咨询</view>
+                        </view>
+                        <view class="right">
+                            <image src="/static/images/back1.png"></image>
+                        </view>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="service">
+        <view class="title">我们的服务</view>
+        <view class="en">OUR SERVICES</view>
+        <view class="items">
+            <view class="line">
+                <view class="item">
+                    <image class="img" src="/static/images/tu1.png"></image>
+                    <view class="title">APP开发</view>
+                    <view class="describe">APP是为手机用户提供更丰富的使用体验。</view>
+                </view>
+                <view class="item">
+                    <image class="img" src="/static/images/tu2.png"></image>
+                    <view class="title">小程序开发</view>
+                    <view class="describe">小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或搜一下即可打开应用。</view>
+                </view>
+            </view>
+            <view class="line">
+                <view class="item">
+                    <image class="img" src="/static/images/tu3.png"></image>
+                    <view class="title">网站建设</view>
+                    <view class="describe">APP专业定制开发全行业一站式互联网解决方案</view>
+                </view>
+                <view class="item">
+                    <image class="img" src="/static/images/tu4.png"></image>
+                    <view class="title">系统开发</view>
+                    <view class="describe">APP专业定制开发全行业一站式互联网解决方案</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="example">
+        <view class="title">客户案例</view>
+        <view class="en">CUSTOMER CASE</view>
+        <view class="buttons">
+            <view class="button selected">APP开发</view>
+            <view class="button">小程序开发</view>
+            <view class="button">网站建设</view>
+            <view class="button">物联网</view>
+            <view class="button">系统开发</view>
+        </view>
+        <view class="phones">
+            <view class="phone">
+                <image src="/static/images/phone1.png"></image>
+                <view class="title">生鲜配送</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone2.png"></image>
+                <view class="title">外卖配送</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone3.png"></image>
+                <view class="title">生活商城</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone4.png"></image>
+                <view class="title">在线教育</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone5.png"></image>
+                <view class="title">旅游出行</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone6.png"></image>
+                <view class="title">母婴生活</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone7.png"></image>
+                <view class="title">医疗健康</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone8.png"></image>
+                <view class="title">租房买房</view>
+            </view>
+            <view class="phone">
+                <image src="/static/images/phone9.png"></image>
+                <view class="title">医美整形</view>
+            </view>
+            <view class="more">
+                查看更多>>
+            </view>
+        </view>
+    </view>
+    <view class="ProjectProcess">
+        <image src="/static/images/backback.png" class="background"></image>
+        <image src="/static/images/backdown.png" class="background1"></image>
+        <view class="container">
+            <view class="top">
+                <view class="title">项目服务流程</view>
+                <view class="en">PROJECT SERVICE PROCESS</view>
+            </view>
+            <view class="line1">
+                <view class="leftText">了解项目功能需求</view>
+                <view class="leftLogo">
+                    <image src="/static/images/logo1.png"></image>
+                </view>
+                <image src="/static/images/right.png" class="centerLogo"></image>
+                <view class="rightLogo">
+                    <image class="yuan" src="/static/images/logo2.png"></image>
+                </view>
+                <view class="rightText">UE交互设计UI视觉创意设计</view>
+            </view>
+            <view class="line2">
+                <image src="/static/images/leftdown.png"></image>
+            </view>
+            <view class="line1">
+                <view class="leftText">前端代码编写</view>
+                <view class="leftLogo">
+                    <image src="/static/images/logo3.png"></image>
+                </view>
+                <image src="/static/images/right.png" class="centerLogo"></image>
+                <view class="rightLogo">
+                    <image class="yuan" src="/static/images/logo4.png"></image>
+                </view>
+                <view class="rightText">后端功能开发</view>
+            </view>
+            <view class="line2">
+                <image src="/static/images/leftdown.png"></image>
+            </view>
+            <view class="line1">
+                <view class="leftText">项目整体测试</view>
+                <view class="leftLogo">
+                    <image class="yuan" src="/static/images/logo5.png"></image>
+                </view>
+                <image src="/static/images/right.png" class="centerLogo"></image>
+                <view class="rightLogo">
+                    <image src="/static/images/logo6.png"></image>
+                </view>
+                <view class="rightText">部署上线交付使用</view>
+            </view>
+
+        </view>
+    </view>
+    <view class="advantage">
+        <view class="title">我们的优势</view>
+        <view class="en">OUR ADVANTAGE</view>
+        <view class="items">
+            <view class="item">
+                <image class="img1" src="/static/images/av1.png"></image>
+                <view class="title">详细的了解功能需求</view>
+            </view>
+            <view class="item">
+                <image class="img2" src="/static/images/av2.png"></image>
+                <view class="title">创意精细的设计</view>
+            </view>
+            <view class="item">
+                <image class="img3" src="/static/images/av3.png"></image>
+                <view class="title">规范的代码开发</view>
+            </view>
+            <view class="item">
+                <image class="img4" src="/static/images/av4.png"></image>
+                <view class="title">安全稳定的数据库</view>
+            </view>
+            <view class="item">
+                <image class="img5" src="/static/images/av5.png"></image>
+                <view class="title">强大的专业技术团队</view>
+            </view>
+            <view class="item">
+                <image class="img6" src="/static/images/av6.png"></image>
+                <view class="title">线下实体公司</view>
+            </view>
+            <view class="item">
+                <image class="img7" src="/static/images/av7.png"></image>
+                <view class="title">用户至上的服务</view>
+            </view>
+            <view class="item">
+                <image class="img8" src="/static/images/av8.png"></image>
+                <view class="title">众多行业开发经验</view>
+            </view>
+        </view>
+    </view>
+    <view class="news">
+        <view class="title">新闻中心</view>
+        <view class="en">NEWS</view>
+        <view class="items">
+            <view class="item">
+                <view class="left">
+                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
+                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
+                </view>
+                <view class="right">
+                    <image src="/static/images/access.png"></image>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
+                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
+                </view>
+                <view class="right">
+                    <image src="/static/images/access.png"></image>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
+                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
+                </view>
+                <view class="right">
+                    <image src="/static/images/access.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="partner">
+        <view class="title">合作伙伴</view>
+        <view class="en">PARTNER</view>
+        <view class="items">
+            <view class="item">
+                <image class="img1" src="/static/images/pa1.png"></image>
+            </view>
+            <view class="item">
+                <image class="img2" src="/static/images/pa2.png"></image>
+            </view>
+            <view class="item">
+                <image class="img3" src="/static/images/pa3.png"></image>
+            </view>
+            <view class="item">
+                <image class="img4" src="/static/images/pa4.png"></image>
+            </view>
+            <view class="item">
+                <image class="img5" src="/static/images/pa5.png"></image>
+            </view>
+            <view class="item">
+                <image class="img6" src="/static/images/pa6.png"></image>
+            </view>
+            <view class="item">
+                <image class="img7" src="/static/images/pa7.png"></image>
+            </view>
+            <view class="item">
+                <image class="img8" src="/static/images/pa8.png"></image>
+            </view>
+            <view class="item">
+                <image class="img9" src="/static/images/pa9.png"></image>
+            </view>
+            <view class="item">
+                <image class="img10" src="/static/images/pa10.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="aboutus">
+        <view class="title">关于我们</view>
+        <view class="en">ABOUT US</view>
+
+        <image src="/static/images/us.png"></image>
+        <text>郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</text>
+        <text>我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</text>
+    </view>
+</view>
