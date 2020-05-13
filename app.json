@@ -1,5 +1,7 @@
 {
   "pages":[
+
+    "pages/newsCenter/newsCenter",
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs"

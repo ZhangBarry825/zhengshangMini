@@ -1,8 +1,23 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
-    <view class="top-box">
+    <view class="top-holder"></view>
+    <view class="logo-border" wx:if="{{!isMenuShow}}">
         <image class="logo-img" src="/static/images/logo.png"></image>
-        <image class="menu-img" src="/static/images/menu.png"></image>
+        <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu" >
+        <view class="logo-box">
+            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="menu-img" src="/static/images/menu.png"></image>
+        </view>
+        <view class="menuItems">
+            <view class="item">首页</view>
+            <view class="item">业务领域</view>
+            <view class="item">客户案例</view>
+            <view class="item">新闻中心</view>
+            <view class="item">关于我们</view>
+            <view class="item">联系我们</view>
+        </view>
     </view>
     <view class="swiper-box">
         <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#F5CE30" indicator-color="#fff"
@@ -266,8 +281,22 @@
         <view class="title">关于我们</view>
         <view class="en">ABOUT US</view>
 
-        <image src="/static/images/us.png"></image>
-        <text>郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</text>
-        <text>我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</text>
+        <view class="content-box">
+            <image src="/static/images/us.png"></image>
+            <view class="text">郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</view>
+            <view class="text">我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</view>
+        </view>
+
+    </view>
+    <view class="downInfo">
+        <view class="top">
+            <text>QQ邮箱 ：943870975@qq.com</text>
+            <text>联系电话：15238699705</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号</text>
+        </view>
+        <view class="down">
+            <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
+            <text>All RIGHTS RESERVED    豫ICP备13024022号-1</text>
+        </view>
     </view>
 </view>

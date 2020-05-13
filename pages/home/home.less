@@ -2,13 +2,82 @@
   width: 100%;
   box-sizing: border-box;
 
-  .top-box {
+  .top-holder {
+    height: 80rpx;
     width: 100%;
+  }
+  .logo-border {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: white;
     padding: 30rpx;
+    height: 80rpx;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 5;
+    .logo-img {
+      width: 146rpx;
+      height: 35rpx;
+    }
+    .menu-img {
+      width: 30rpx;
+      height: 26rpx;
+    }
+  }
+
+  .items-box{
+    position: fixed;
+
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.38);
+    box-sizing: border-box;
+
+    .logo-box {
+      background-color: white;
+      padding: 30rpx;
+      height: 80rpx;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menuItems {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        font-size: 24rpx;
+        color: #333333;
+        width: 100%;
+        text-align: center;
+        padding: 27rpx 0;
+        box-sizing: border-box;
+        border-top:  0.333333px solid gainsboro;
+      }
+
+      .item:after {
+        content: '';
+        border: 1px solid #999;
+        height: 200%;
+        width: 200%;
+        -webkit-transform: scale(0.5);
+        transform: 0.5;
+        transform-origin: 0 0;
+        -webkit-transform: 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
 
     .logo-img {
       width: 146rpx;
@@ -117,7 +186,7 @@
 
         .item {
           width: 330rpx;
-          height: 520rpx;
+          height: 400rpx;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -151,7 +220,7 @@
             word-break: break-all;
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 6;
+            -webkit-line-clamp:3;
             overflow: hidden;
           }
 
@@ -395,6 +464,7 @@
       justify-content: space-around;
       padding-bottom: 20rpx;
       flex-wrap: wrap;
+
       .item {
         width: 320rpx;
         height: 397rpx;
@@ -407,42 +477,51 @@
         border-radius: 10rpx;
         box-shadow: 0 0 30rpx #d8d8d8;
         margin-bottom: 35rpx;
-        .img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8 {
+
+        .img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8 {
           width: 160rpx;
           height: 160rpx;
           margin-bottom: 40rpx;
         }
-        .img1{
-          width:210rpx;
-          height:152rpx ;
+
+        .img1 {
+          width: 210rpx;
+          height: 152rpx;
         }
-        .img2{
+
+        .img2 {
           width: 150rpx;
-          height: 160rpx ;
+          height: 160rpx;
         }
-        .img3{
+
+        .img3 {
           width: 180rpx;
-          height: 120rpx ;
+          height: 120rpx;
         }
-        .img4{
+
+        .img4 {
           width: 180rpx;
-          height: 170rpx ;
+          height: 170rpx;
         }
-        .img5{
+
+        .img5 {
           width: 200rpx;
-          height: 150rpx ;
+          height: 150rpx;
         }
-        .img6{
+
+        .img6 {
           width: 213rpx;
-          height: 146rpx ;
+          height: 146rpx;
         }
-        .img7{
+
+        .img7 {
           width: 120rpx;
-          height: 180rpx ;
+          height: 180rpx;
         }
-        .img8{
+
+        .img8 {
           width: 160rpx;
-          height: 145rpx ;
+          height: 145rpx;
         }
 
         .title {
@@ -472,6 +551,7 @@
       }
     }
   }
+
   .news {
     padding: 20rpx 30rpx;
     width: 100%;
@@ -504,6 +584,7 @@
       justify-content: space-around;
       padding: 20rpx 0;
       flex-wrap: wrap;
+
       .item {
         box-shadow: 0 0 30rpx #d8d8d8;
         width: 100%;
@@ -515,23 +596,26 @@
         padding: 20rpx;
         box-sizing: border-box;
         border-radius: 10rpx;
-        .left{
+
+        .left {
           width: calc(100% - 40rpx);
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          .title{
+
+          .title {
             padding: 15rpx 0;
             text-align: left;
             font-size: 27rpx;
-            color:#333333;
+            color: #333333;
 
             max-width: calc(100% - 40rpx);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
           }
-          .describe{
+
+          .describe {
             max-width: calc(100% - 40rpx);
             word-break: break-all;
             display: -webkit-box;
@@ -539,12 +623,14 @@
             -webkit-line-clamp: 2;
             overflow: hidden;
             font-size: 23rpx;
-            color:#333333;
+            color: #333333;
           }
         }
-        .right{
+
+        .right {
           width: 40rpx;
-          image{
+
+          image {
             width: 40rpx;
             height: 40rpx;
           }
@@ -552,6 +638,7 @@
       }
     }
   }
+
   .partner {
     padding: 40rpx 20rpx;
     width: 100%;
@@ -583,6 +670,7 @@
       justify-content: space-around;
       padding-bottom: 20rpx;
       flex-wrap: wrap;
+
       .item {
         width: 330rpx;
         height: 140rpx;
@@ -597,49 +685,60 @@
         margin-bottom: 35rpx;
         overflow: hidden;
         position: relative;
-        .img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8,.img9,.img10 {
+
+        .img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9, .img10 {
           margin-bottom: 30rpx;
           position: absolute;
         }
-        .img1{
-          width:191rpx;
-          height:191rpx ;
+
+        .img1 {
+          width: 191rpx;
+          height: 191rpx;
         }
-        .img2{
+
+        .img2 {
           width: 109rpx;
-          height: 109rpx ;
+          height: 109rpx;
         }
-        .img3{
+
+        .img3 {
           width: 108rpx;
-          height: 108rpx ;
+          height: 108rpx;
         }
-        .img4{
+
+        .img4 {
           width: 250rpx;
-          height: 184rpx ;
+          height: 184rpx;
         }
-        .img5{
+
+        .img5 {
           width: 144rpx;
-          height: 98rpx ;
+          height: 98rpx;
         }
-        .img6{
+
+        .img6 {
           width: 161rpx;
-          height: 52rpx ;
+          height: 52rpx;
         }
-        .img7{
+
+        .img7 {
           width: 162rpx;
-          height: 57rpx ;
+          height: 57rpx;
         }
-        .img8{
+
+        .img8 {
           width: 173rpx;
-          height: 65rpx ;
+          height: 65rpx;
         }
-        .img9{
+
+        .img9 {
           width: 228rpx;
-          height: 129rpx ;
+          height: 129rpx;
         }
-        .img10{
+
+        .img10 {
           width: 198rpx;
-          height: 86rpx ;
+          height: 86rpx;
         }
 
         .title {
@@ -669,6 +768,7 @@
       }
     }
   }
+
   .aboutus {
     padding: 40rpx 20rpx;
     width: 100%;
@@ -692,5 +792,41 @@
       padding-bottom: 40rpx;
     }
 
+    .content-box {
+      width: 100%;
+      box-sizing: border-box;
+
+      image {
+        width: 100%;
+      }
+
+      .text {
+        text-indent: 2em;
+        padding: 10rpx 0;
+        font-size: 29rpx;
+        line-height: 1.5;
+      }
+    }
+
+  }
+
+  .downInfo {
+    padding: 40rpx 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #333333;
+    color: #fff;
+
+    .top, .down {
+      width: 100%;
+      padding: 30rpx 0;
+
+      text {
+        line-height: 1.5;
+        display: block;
+        width: 100%;
+        font-size: 25rpx;
+      }
+    }
   }
 }
