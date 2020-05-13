@@ -1,0 +1,52 @@
+<!--pages/newsDetail/newsDetail.wxml-->
+<view class="news-container">
+    <view class="top-holder"></view>
+    <view class="logo-border" wx:if="{{!isMenuShow}}">
+        <image class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
+        <view class="logo-box">
+            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="menu-img" src="/static/images/menu.png"></image>
+        </view>
+        <view class="menuItems">
+            <view class="item">首页</view>
+            <view class="item">业务领域</view>
+            <view class="item">客户案例</view>
+            <view class="item">新闻中心</view>
+            <view class="item">关于我们</view>
+            <view class="item">联系我们</view>
+        </view>
+    </view>
+
+    <view class="background">
+        <image mode='aspectFill' src="/static/images/backnews.png" class="backImg"></image>
+        <view class="content">
+            <view class="text">用专业的技术，为您提供最佳的解决方案</view>
+        </view>
+    </view>
+
+    <view class="article">
+        <view class="title">如果我们重新定义社区营销</view>
+        <view class="time">2020-04-16 14:18</view>
+        <view class="content">
+            <text>往每家每户的信箱里塞促销小广告；让社区物业给每户免费送东西；到社区广场设摊，扫码送小礼物；在社区微信群里推送团购链接……  社</text>
+            <image src="/static/images/backnews.png"></image>
+        </view>
+    </view>
+
+
+    <view class="downInfo">
+        <view class="top">
+            <text>QQ邮箱 ：943870975@qq.com</text>
+            <text>联系电话：15238699705</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号</text>
+        </view>
+        <view class="down">
+            <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
+            <text>All RIGHTS RESERVED 豫ICP备13024022号-1</text>
+        </view>
+    </view>
+
+</view>
