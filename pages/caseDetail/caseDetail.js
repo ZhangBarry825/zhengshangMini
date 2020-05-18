@@ -1,4 +1,4 @@
-// pages/newsCenter/newsCenter.js
+// pages/caseDetail/caseDetail.js
 const app = getApp()
 Page({
 
@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isMenuShow:false
+    isMenuShow:false,
+    articleDetail:{}
   },
   showMenu(){
     let that=this
@@ -17,18 +18,41 @@ Page({
   goHome(){
     app.goHome()
   },
+  goToCaseDetail(item){
+    console.log(item,123)
+    let groupName=item.currentTarget.dataset.item.groupName
+    let caseName=item.currentTarget.dataset.item.caseName
+
+    let path='/pages/caseDetail/caseDetail?caseName='+caseName+'&groupName='+groupName
+    console.log(path,123)
+    app.navigateTo(path)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options,123)
+    this.setData({
+      caseName:options.caseName,
+      groupName:options.groupName
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that=this
+    // customerCase/customerCasepageDetail
+    app.fetchData('/customerCase/customerCasepageDetail','get',{
+      caseName:that.data.caseName,
+      caseGroupName:that.data.groupName
+    }).then(res=>{
+      console.log(res,123)
+      that.setData({
+        articleDetail:res.data
+      })
+    })
   },
 
   /**

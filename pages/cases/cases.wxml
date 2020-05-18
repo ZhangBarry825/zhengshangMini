@@ -1,4 +1,4 @@
-<!--pages/newsDetail/newsDetail.wxml-->
+<!--pages/cases/cases.wxml-->
 <view class="news-container">
     <view class="top-holder"></view>
     <view class="logo-border" wx:if="{{!isMenuShow}}">
@@ -21,19 +21,33 @@
     </view>
 
     <view class="background">
-        <image mode='aspectFill' src="/static/images/backnews.png" class="backImg"></image>
-        <view class="content">
-            <view class="text">用专业的技术，为您提供最佳的解决方案</view>
+        <image mode='aspectFill' src="/static/images/caseBack1.png" class="backImg"></image>
+        <view class="backGray"></view>
+
+        <image  class="content1" mode="aspectFit" src="/static/images/caseBack2.png"></image>
+        <view class="content2">
+            <view class="text">以用户体验为中心</view>
+            <view class="text">打造有价值的产品</view>
         </view>
+
     </view>
 
-    <view class="article" >
-<!--        <view class="title">如果我们重新定义社区营销</view>-->
-<!--        <view class="time">2020-04-16 14:18</view>-->
-<!--        <view class="content">-->
-<!--            <text>往每家每户的信箱里塞促销小广告；让社区物业给每户免费送东西；到社区广场设摊，扫码送小礼物；在社区微信群里推送团购链接……  社</text>-->
-<!--            <image src="/static/images/backnews.png"></image>-->
-<!--        </view>-->
+    <view class="caseContent">
+        <view class="buttons">
+            <view class="button {{ idx==nowGroup?'selected':''}}" id="{{idx}}" bind:tap="selectGroup" wx:for="{{customerCase}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                {{item.groupName}}
+            </view>
+        </view>
+
+        <view class="phones">
+            <view class="phone" wx:for="{{customerCase[nowGroup].caseGroup}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+                <view class="title">{{item.caseName}}</view>
+            </view>
+            <view class="more" bind:tap="showMore">
+                加载更多>>
+            </view>
+        </view>
     </view>
 
 
@@ -41,7 +55,7 @@
         <view class="top">
             <text>QQ邮箱 ：943870975@qq.com</text>
             <text>联系电话：15238699705</text>
-            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
         </view>
         <view class="down">
             <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>

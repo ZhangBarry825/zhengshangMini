@@ -1,11 +1,14 @@
 // pages/newsDetail/newsDetail.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isMenuShow:false
+    isMenuShow:false,
+    title:'',
+    articalDetail:''
   },
   showMenu(){
     let that=this
@@ -13,18 +16,32 @@ Page({
       isMenuShow:!that.data.isMenuShow
     })
   },
+  goHome(){
+    app.goHome()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.title,123)
+    this.setData({
+      title:options.title
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that= this
+    app.fetchData('/newsPageDetail/getNewsText','get',{
+      title:that.data.title
+    }).then(res=>{
+      console.log(res.data,'getNewsText')
+      this.setData({
+        articalDetail:res.data
+      })
+    })
   },
 
   /**

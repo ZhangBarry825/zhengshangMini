@@ -1,0 +1,88 @@
+<!--pages/businessArea/businessArea.wxml-->
+<view class="news-container">
+    <view class="top-holder"></view>
+    <view class="logo-border" wx:if="{{!isMenuShow}}">
+        <image bind:tap="goHome"  class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
+        <view class="logo-box">
+            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="menu-img" src="/static/images/menu.png"></image>
+        </view>
+        <view class="menuItems">
+            <view class="item">首页</view>
+            <view class="item">业务领域</view>
+            <view class="item">客户案例</view>
+            <view class="item">新闻中心</view>
+            <view class="item">关于我们</view>
+            <view class="item">联系我们</view>
+        </view>
+    </view>
+
+    <view class="background">
+        <image mode='aspectFill' src="/static/images/bu1.png" class="backImg"></image>
+        <view class="backGray"></view>
+
+        <view class="content">
+            <view class="text">全行业软件开发</view>
+            <view class="text">专业、高效、安全</view>
+        </view>
+
+    </view>
+
+    <view class="busBox">
+        <view class="item1">
+            <view class="left">
+                <image src="/static/images/bu2.png"></image>
+            </view>
+            <view class="right">
+                <view class="title title1">APP开发</view>
+                <view class="des">各行业APP开发，包括直播类、短视频、社区配送、 生活商城、在线教育、健康医疗...</view>
+            </view>
+        </view>
+        <view class="item2">
+            <view class="left">
+                <view class="title title2">网站建设</view>
+                <view class="des">品牌官网、响应式网站、移动端网站、线上商城、 营销型网站、政府办公网站...</view>
+            </view>
+            <view class="right">
+                <image src="/static/images/bu3.png"></image>
+            </view>
+        </view>
+        <view class="item1">
+            <view class="left">
+                <image src="/static/images/bu4.png"></image>
+            </view>
+            <view class="right">
+                <view class="title title3">小程序开发</view>
+                <view class="des">微信小程序开发、公众号开发、三级分销商城、商 家入驻商城、微网站...</view>
+            </view>
+        </view>
+        <view class="item2">
+            <view class="left">
+                <view class="title title4">系统开发</view>
+                <view class="des">OA办公系统、CRM客户管理系统、企业管理软件、 ERP系统、政府办公系统...</view>
+            </view>
+            <view class="right">
+                <image src="/static/images/bu5.png"></image>
+            </view>
+        </view>
+    </view>
+
+
+
+
+    <view class="downInfo">
+        <view class="top">
+            <text>QQ邮箱 ：943870975@qq.com</text>
+            <text>联系电话：15238699705</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
+        </view>
+        <view class="down">
+            <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
+            <text>All RIGHTS RESERVED 豫ICP备13024022号-1</text>
+        </view>
+    </view>
+
+</view>

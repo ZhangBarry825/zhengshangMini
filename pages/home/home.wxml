@@ -11,8 +11,8 @@
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
-            <view class="item">首页</view>
-            <view class="item">业务领域</view>
+            <view class="item" bind:tap="goHome">首页</view>
+            <view class="item" >业务领域</view>
             <view class="item">客户案例</view>
             <view class="item">新闻中心</view>
             <view class="item">关于我们</view>
@@ -22,16 +22,17 @@
     <view class="swiper-box">
         <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#F5CE30" indicator-color="#fff"
                 autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{background}}" wx:key="*this">
+            <block wx:for="{{background}}" wx:for-item="item"  wx:for-index="idx" wx:key="idx">
                 <swiper-item>
                     <view class="swiper-item {{item}}">
-                        <image src="/static/images/background.png" class="backImg"></image>
+<!--                        <image mode="scaleToFill" src="{{item.url}}" class="backImg"></image>-->
+                        <view class="backImg" style="background-image: url({{item.url}})"></view>
                         <view class="left">
-                            <view class="top">专业的互联网解决方案专家</view>
-                            <view class="down">立即咨询</view>
+                            <view class="top">{{item.text}}</view>
+                            <view class="down" wx:if="{{idx===0}}">立即咨询</view>
                         </view>
                         <view class="right">
-                            <image src="/static/images/back1.png"></image>
+<!--                            <image src="/static/images/back1.png"></image>-->
                         </view>
                     </view>
                 </swiper-item>
@@ -42,80 +43,30 @@
         <view class="title">我们的服务</view>
         <view class="en">OUR SERVICES</view>
         <view class="items">
-            <view class="line">
-                <view class="item">
-                    <image class="img" src="/static/images/tu1.png"></image>
-                    <view class="title">APP开发</view>
-                    <view class="describe">APP是为手机用户提供更丰富的使用体验。</view>
+
+                <view class="item" wx:for="{{services}}" wx:for-item="item" wx:if="{{idx<8}}"  wx:for-index="idx" wx:key="idx">
+                    <image class="img" src="{{item.url}}"></image>
+                    <view class="title">{{item.title}}</view>
+                    <view class="describe">{{item.text}}</view>
                 </view>
-                <view class="item">
-                    <image class="img" src="/static/images/tu2.png"></image>
-                    <view class="title">小程序开发</view>
-                    <view class="describe">小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或搜一下即可打开应用。</view>
-                </view>
-            </view>
-            <view class="line">
-                <view class="item">
-                    <image class="img" src="/static/images/tu3.png"></image>
-                    <view class="title">网站建设</view>
-                    <view class="describe">APP专业定制开发全行业一站式互联网解决方案</view>
-                </view>
-                <view class="item">
-                    <image class="img" src="/static/images/tu4.png"></image>
-                    <view class="title">系统开发</view>
-                    <view class="describe">APP专业定制开发全行业一站式互联网解决方案</view>
-                </view>
-            </view>
+
         </view>
     </view>
     <view class="example">
         <view class="title">客户案例</view>
         <view class="en">CUSTOMER CASE</view>
         <view class="buttons">
-            <view class="button selected">APP开发</view>
-            <view class="button">小程序开发</view>
-            <view class="button">网站建设</view>
-            <view class="button">物联网</view>
-            <view class="button">系统开发</view>
+            <view class="button {{ idx==0?'selected':''}}" id="{{idx}}" bind:tap="selectGroup" wx:for="{{customerCase}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                {{item.groupName}}
+            </view>
         </view>
         <view class="phones">
-            <view class="phone">
-                <image src="/static/images/phone1.png"></image>
-                <view class="title">生鲜配送</view>
+            <view class="phone" id="{{idx}}" bind:tap="goToCaseDetail" wx:for="{{customerCase[0].caseGroup}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+                <view class="title">{{item.caseName}}</view>
             </view>
-            <view class="phone">
-                <image src="/static/images/phone2.png"></image>
-                <view class="title">外卖配送</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone3.png"></image>
-                <view class="title">生活商城</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone4.png"></image>
-                <view class="title">在线教育</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone5.png"></image>
-                <view class="title">旅游出行</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone6.png"></image>
-                <view class="title">母婴生活</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone7.png"></image>
-                <view class="title">医疗健康</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone8.png"></image>
-                <view class="title">租房买房</view>
-            </view>
-            <view class="phone">
-                <image src="/static/images/phone9.png"></image>
-                <view class="title">医美整形</view>
-            </view>
-            <view class="more">
+
+            <view class="more" bind:tap="goToCases">
                 查看更多>>
             </view>
         </view>
@@ -174,37 +125,9 @@
         <view class="title">我们的优势</view>
         <view class="en">OUR ADVANTAGE</view>
         <view class="items">
-            <view class="item">
-                <image class="img1" src="/static/images/av1.png"></image>
-                <view class="title">详细的了解功能需求</view>
-            </view>
-            <view class="item">
-                <image class="img2" src="/static/images/av2.png"></image>
-                <view class="title">创意精细的设计</view>
-            </view>
-            <view class="item">
-                <image class="img3" src="/static/images/av3.png"></image>
-                <view class="title">规范的代码开发</view>
-            </view>
-            <view class="item">
-                <image class="img4" src="/static/images/av4.png"></image>
-                <view class="title">安全稳定的数据库</view>
-            </view>
-            <view class="item">
-                <image class="img5" src="/static/images/av5.png"></image>
-                <view class="title">强大的专业技术团队</view>
-            </view>
-            <view class="item">
-                <image class="img6" src="/static/images/av6.png"></image>
-                <view class="title">线下实体公司</view>
-            </view>
-            <view class="item">
-                <image class="img7" src="/static/images/av7.png"></image>
-                <view class="title">用户至上的服务</view>
-            </view>
-            <view class="item">
-                <image class="img8" src="/static/images/av8.png"></image>
-                <view class="title">众多行业开发经验</view>
+            <view class="item" wx:for="{{advantages}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                <view class="img1" style="background-image: url({{item.url}})" ></view>
+                <view class="title">{{item.title}}</view>
             </view>
         </view>
     </view>
@@ -212,28 +135,10 @@
         <view class="title">新闻中心</view>
         <view class="en">NEWS</view>
         <view class="items">
-            <view class="item">
+            <view class="item" wx:for="{{news}}" data-item="{{item}}" wx:for-item="item"  wx:for-index="idx" wx:key="key" bind:tap="goToNewsDetail">
                 <view class="left">
-                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
-                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
-                </view>
-                <view class="right">
-                    <image src="/static/images/access.png"></image>
-                </view>
-            </view>
-            <view class="item">
-                <view class="left">
-                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
-                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
-                </view>
-                <view class="right">
-                    <image src="/static/images/access.png"></image>
-                </view>
-            </view>
-            <view class="item">
-                <view class="left">
-                    <view class="title">微信小程序三周年，又一个“互联网时代”重启了？</view>
-                    <view class="describe">在小程序第三年，“互联网新时代是由小程序带来的”，这样 的论点已在业内有了很多拥趸。 </view>
+                    <view class="title">{{item.title}}</view>
+                    <view class="describe">{{item.lead}} </view>
                 </view>
                 <view class="right">
                     <image src="/static/images/access.png"></image>
@@ -292,7 +197,7 @@
         <view class="top">
             <text>QQ邮箱 ：943870975@qq.com</text>
             <text>联系电话：15238699705</text>
-            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
         </view>
         <view class="down">
             <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>

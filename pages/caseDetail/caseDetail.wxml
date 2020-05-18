@@ -1,0 +1,74 @@
+<!--pages/caseDetail/caseDetail.wxml-->
+<view class="news-container">
+    <view class="top-holder"></view>
+    <view class="logo-border" wx:if="{{!isMenuShow}}">
+        <image bind:tap="goHome"  class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
+        <view class="logo-box">
+            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="menu-img" src="/static/images/menu.png"></image>
+        </view>
+        <view class="menuItems">
+            <view class="item">首页</view>
+            <view class="item">业务领域</view>
+            <view class="item">客户案例</view>
+            <view class="item">新闻中心</view>
+            <view class="item">关于我们</view>
+            <view class="item">联系我们</view>
+        </view>
+    </view>
+
+    <view class="background">
+        <image mode='aspectFill' src="/static/images/caseBack1.png" class="backImg"></image>
+        <view class="backGray"></view>
+
+        <image  class="content1" mode="aspectFit" src="/static/images/caseBack2.png"></image>
+        <view class="content2">
+            <view class="text">以用户体验为中心</view>
+            <view class="text">打造有价值的产品</view>
+        </view>
+
+    </view>
+
+    <view class="detailBox">
+        <view class="title">{{articleDetail.caseName}}</view>
+        <view class="group">{{articleDetail.groupName}}</view>
+        <view class="detail">{{articleDetail.detail}}</view>
+        <image mode="widthFix" src="{{articleDetail.url}}"></image>
+
+
+        <view class="back" bind:tap="goHome">
+            返回列表首页
+        </view>
+    </view>
+
+    <view class="youLike">
+        <view class="title">猜你喜欢</view>
+        <view class="en">YOU MAY ALSO LIKE</view>
+
+        <view class="phones">
+            <view class="phone" wx:for="{{articleDetail.guessYouLike}}" data-item="{{item}}" wx:for-item="item"  wx:for-index="idx" wx:key="key" bind:tap="goToCaseDetail">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+                <view class="title">{{item.caseName}}</view>
+            </view>
+        </view>
+    </view>
+
+
+
+
+    <view class="downInfo">
+        <view class="top">
+            <text>QQ邮箱 ：943870975@qq.com</text>
+            <text>联系电话：15238699705</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
+        </view>
+        <view class="down">
+            <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
+            <text>All RIGHTS RESERVED 豫ICP备13024022号-1</text>
+        </view>
+    </view>
+
+</view>

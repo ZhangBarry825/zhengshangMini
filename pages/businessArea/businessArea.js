@@ -1,4 +1,4 @@
-// pages/newsCenter/newsCenter.js
+// pages/businessArea/businessArea.js
 const app = getApp()
 Page({
 
@@ -6,12 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isMenuShow:false
+    isMenuShow: false,
   },
-  showMenu(){
-    let that=this
+  showMenu() {
+    let that = this
     this.setData({
-      isMenuShow:!that.data.isMenuShow
+      isMenuShow: !that.data.isMenuShow
     })
   },
   goHome(){

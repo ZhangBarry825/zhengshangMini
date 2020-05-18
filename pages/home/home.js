@@ -1,4 +1,5 @@
 // pages/home/home.js
+const app = getApp()
 Page({
     /**
      * 页面的初始数据
@@ -12,7 +13,45 @@ Page({
         interval: 2000,
         duration: 500,
 
-        isMenuShow:false
+        nowGroup:0,
+
+        services:[],
+        customerCase:[],
+
+
+        isMenuShow:false,
+    },
+    selectGroup(num){
+        console.log(num.currentTarget)
+        this.setData({
+            nowGroup:parseInt(num.currentTarget.id)
+        })
+        wx.navigateTo({
+            url: '/pages/cases/cases?group='+num.currentTarget.id,
+        })
+
+    },
+    goToNewsDetail(item){
+
+        let path='/pages/newsDetail/newsDetail?title='+item.currentTarget.dataset.item.title
+        console.log(path,123)
+        app.navigateTo(path)
+    },
+    goHome(){
+        console.log('回到主页')
+        app.goHome()
+    },
+
+    goToCases(){
+        app.navigateTo('/pages/cases/cases')
+    },
+    goToCaseDetail(item){
+        let groupName=this.data.customerCase[this.data.nowGroup].groupName
+        let caseName=this.data.customerCase[this.data.nowGroup].caseGroup[item.currentTarget.id].caseName
+
+        let path='/pages/caseDetail/caseDetail?caseName='+caseName+'&groupName='+groupName
+        console.log(path,123)
+        app.navigateTo(path)
     },
     showMenu(){
         let that=this
@@ -32,7 +71,35 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        let that=this
+        app.fetchData('/index/getSlideshow','get').then(res=>{
+            this.setData({
+                background:res.data
+            })
+        })
+        app.fetchData('/index/getOurService','get').then(res=>{
+            this.setData({
+                services:res.data
+            })
+        })
+        app.fetchData('/index/getCustomerCase','get').then(res=>{
+            console.log(res.data,123)
+            this.setData({
+                customerCase:res.data
+            })
+        })
+        app.fetchData('/index/getOurAdvantages','get').then(res=>{
+            console.log(res.data,'advantages')
+            this.setData({
+                advantages:res.data
+            })
+        })
+        app.fetchData('/index/getNews','get').then(res=>{
+            console.log(res.data,'getNews')
+            this.setData({
+                news:res.data.rightNews
+            })
+        })
     },
 
     /**

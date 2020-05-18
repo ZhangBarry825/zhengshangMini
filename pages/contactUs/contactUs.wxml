@@ -1,0 +1,70 @@
+<!--pages/contactUs/contactUs.wxml-->
+<view class="news-container">
+    <view class="top-holder"></view>
+    <view class="logo-border" wx:if="{{!isMenuShow}}">
+        <image bind:tap="goHome"  class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
+    </view>
+    <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
+        <view class="logo-box">
+            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="menu-img" src="/static/images/menu.png"></image>
+        </view>
+        <view class="menuItems">
+            <view class="item">首页</view>
+            <view class="item">业务领域</view>
+            <view class="item">客户案例</view>
+            <view class="item">新闻中心</view>
+            <view class="item">关于我们</view>
+            <view class="item">联系我们</view>
+        </view>
+    </view>
+
+    <view class="background">
+        <image mode='aspectFill' src="/static/images/c1.png" class="backImg"></image>
+        <view class="backGray"></view>
+
+        <view class="content">
+            <view class="text">您只需要有想法，剩下的交给我们</view>
+        </view>
+
+    </view>
+    <view class="contactDetail">
+        <view class="map">
+            <map id="map" markers="{{markers}}" longitude="113.767800" latitude="34.769820" scale="17"></map>
+        </view>
+    </view>
+
+    <view class="question">
+        <view class="box">
+            <view class="titleImg">
+                <image mode="widthFix" src="/static/images/c2.png"></image>
+                <view class="text">项目需求</view>
+            </view>
+            <view class="formBox">
+                <input type="text" class="input" placeholder="请输入姓名"/>
+                <input type="number" maxlength="{{11}}" class="input" placeholder="请输入手机号码"/>
+                <textarea class="textarea" placeholder="请输入简单需求（如网站建设、APP开发、软件开发、小程序开发等）"></textarea>
+                <view class="confirm">
+                    免费获取项目方案和报价
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+
+
+    <view class="downInfo">
+        <view class="top">
+            <text>QQ邮箱 ：943870975@qq.com</text>
+            <text>联系电话：15238699705</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
+        </view>
+        <view class="down">
+            <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
+            <text>All RIGHTS RESERVED 豫ICP备13024022号-1</text>
+        </view>
+    </view>
+
+</view>

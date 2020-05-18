@@ -1,9 +1,13 @@
 {
   "pages":[
+    "pages/home/home",
+    "pages/businessArea/businessArea",
+    "pages/contactUs/contactUs",
+    "pages/caseDetail/caseDetail",
+    "pages/cases/cases",
     "pages/aboutUs/aboutUs",
     "pages/newsDetail/newsDetail",
     "pages/newsCenter/newsCenter",
-    "pages/home/home",
     "pages/index/index",
     "pages/logs/logs"
   ],

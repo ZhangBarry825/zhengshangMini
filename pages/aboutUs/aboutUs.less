@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 5;
+    z-index: 10;
 
     .logo-img {
       width: 146rpx;
@@ -35,7 +35,7 @@
     position: fixed;
 
     top: 0;
-    z-index: 5;
+    z-index: 10;
     width: 100%;
     height: 100%;
     background-color: rgba(51, 51, 51, 0.38);
@@ -96,24 +96,27 @@
   .background{
     width: 100%;
     height: 268rpx;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     color: #FFF;
 
-    image{
+
+    .backImg{
       position: absolute;
       width: 100%;
       height: 268rpx;
       z-index: -1;
     }
-    .content{
+    .backGray{
       position: absolute;
       width: 100%;
       height: 268rpx;
+      z-index: -1;
       background-color: rgba(51,51,51,0.31);
+    }
+    .content{
+      //position: absolute;
+      width: 100%;
+      //height: 268rpx;
+      padding-top: 50rpx;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -125,15 +128,204 @@
         letter-spacing: 5rpx;
       }
     }
+
+  }
+  .floatBox{
+    width: 100%;
+    padding: 30rpx;
+    box-sizing: border-box;
     .floatText{
-      width: 90%;
-      border-radius: 20rpx;
+      position: relative;
+      box-shadow: 0 10px 10px gainsboro;
       background-color: #fff;
+      top: -115rpx;
+      width: 100%;
+      border-radius: 20rpx;
+      //background-color: #fff;
       padding: 20rpx;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .item{
+        padding-top: 10rpx;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        image{
+          width: 72rpx;
+          height: 72rpx;
+          position: relative;
+        }
+        .text{
+          padding: 20rpx;
+          font-size: 24rpx;
+        }
+      }
     }
   }
+  .aboutDetail{
+    position: relative;
+    top: -115rpx;
+    padding: 20rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    .title, .en {
+      width: 100%;
+      padding: 5rpx 0;
+      box-sizing: border-box;
+      text-align: center;
+    }
 
+    .title {
+      font-size: 35rpx;
+    }
+
+    .en {
+      color: #bebebe;
+      font-size: 35rpx;
+      letter-spacing: 3rpx;
+      padding-bottom: 40rpx;
+    }
+
+    .content-box {
+      width: 100%;
+      box-sizing: border-box;
+
+      image {
+        width: 100%;
+      }
+
+      .text {
+        text-indent: 2em;
+        padding: 10rpx 0;
+        font-size: 29rpx;
+        line-height: 1.5;
+      }
+    }
+  }
+  .good{
+    height: 320rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .backImg{
+      position: absolute;
+      width: 100%;
+      height: 320rpx;
+      z-index: -1;
+    }
+
+    .left{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .text{
+        color: #fff;
+        font-size: 25rpx;
+        z-index: 1;
+        position: relative;
+        left: -15rpx;
+      }
+      .leftImg{
+        position: absolute;
+        width: 230rpx;
+        height: 100rpx;
+        z-index: -1;
+      }
+      .top,.down{
+        height: 100rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .down{
+        height: 100rpx;
+      }
+    }
+    .middle{
+      height: 120rpx;
+      width: 120rpx;
+      border-radius: 50%;
+      background-color: white;
+      margin: 0 70rpx;
+      font-size: 22rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px #fff;
+    }
+    .right{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .text{
+        color: #fff;
+        font-size: 25rpx;
+        z-index: 1;
+        position: relative;
+        right: -15rpx;
+      }
+      .rightImg{
+        position: absolute;
+        width: 230rpx;
+        height: 100rpx;
+        z-index: -1;
+      }
+      .top,.down{
+        height: 100rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .down{
+        height: 100rpx;
+      }
+    }
+  }
+  .environment{
+    display: flex;
+    flex-direction: column;
+    padding: 30rpx;
+    box-sizing: border-box;
+    .title{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .text{
+        font-size: 33rpx;
+      }
+      image{
+        margin-left: 10rpx;
+        width: 33rpx;
+        height: 33rpx;
+      }
+    }
+    .enTitle{
+      margin: 10rpx 0;
+      font-size: 32rpx;
+      color: #bebebe;
+    }
+    .imgs{
+      width: 100%;
+      padding: 30rpx 10rpx;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      image{
+        width: 210rpx;
+        height: 200rpx;
+      }
+    }
+  }
 
 
   .downInfo {

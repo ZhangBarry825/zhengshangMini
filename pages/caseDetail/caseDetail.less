@@ -1,0 +1,287 @@
+.news-container {
+  width: 100%;
+  box-sizing: border-box;
+
+  .top-holder {
+    height: 80rpx;
+    width: 100%;
+  }
+
+  .logo-border {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    padding: 30rpx;
+    height: 80rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+    .logo-img {
+      width: 146rpx;
+      height: 35rpx;
+    }
+
+    .menu-img {
+      width: 30rpx;
+      height: 26rpx;
+    }
+  }
+
+  .items-box {
+    position: fixed;
+
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.38);
+    box-sizing: border-box;
+
+    .logo-box {
+      background-color: white;
+      padding: 30rpx;
+      height: 80rpx;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menuItems {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        font-size: 24rpx;
+        color: #333333;
+        width: 100%;
+        text-align: center;
+        padding: 27rpx 0;
+        box-sizing: border-box;
+        border-top: 0.333333px solid gainsboro;
+      }
+
+      .item:after {
+        content: '';
+        border: 1px solid #999;
+        height: 200%;
+        width: 200%;
+        -webkit-transform: scale(0.5);
+        transform: 0.5;
+        transform-origin: 0 0;
+        -webkit-transform: 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .logo-img {
+      width: 146rpx;
+      height: 35rpx;
+    }
+
+    .menu-img {
+      width: 30rpx;
+      height: 26rpx;
+    }
+  }
+
+  .background{
+    width: 100%;
+    height: 268rpx;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .backImg{
+      position: absolute;
+      width: 100%;
+      height: 268rpx;
+      z-index: -1;
+    }
+    .backGray{
+      position: absolute;
+      width: 100%;
+      height: 268rpx;
+      z-index: -1;
+      background-color: rgba(51,51,51,0.31);
+    }
+    .content1{
+      width: 411rpx;
+      height: 200rpx;
+    }
+    .content2{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 0;
+      .text{
+        margin-bottom: 20rpx;
+        font-size: 33rpx;
+        letter-spacing: 5rpx;
+      }
+    }
+
+  }
+
+
+  .detailBox{
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    min-height: 500rpx;
+
+    .title{
+      padding: 10rpx 0;
+      font-size: 30rpx;
+      font-weight: bold;
+
+    }
+    .group,.detail{
+      padding: 10rpx 0;
+      font-size: 25rpx;
+      color: #666666;
+    }
+    image{
+      width: 100%;
+    }
+    .back{
+      margin-top: 30rpx;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: #f5ce30;
+      padding: 27rpx 0;
+      border-radius: 50rpx;
+      font-size: 30rpx;
+    }
+  }
+  .youLike{
+    padding: 20rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+
+    .title, .en {
+      width: 100%;
+      padding: 5rpx 0;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .title {
+      font-size: 35rpx;
+    }
+
+    .en {
+      color: #bebebe;
+      font-size: 35rpx;
+      letter-spacing: 3rpx;
+      padding-bottom: 40rpx;
+    }
+    .phones {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10rpx 0;
+      display: flex;
+      flex-direction: row;
+
+      white-space: nowrap;
+      overflow-x: auto;
+
+      .phone {
+        margin-bottom: 30rpx;
+        margin-right: 20rpx;
+        width: 335rpx;
+        image {
+          border-radius: 20rpx;
+          width: 335rpx;
+          height: 340rpx;
+          box-shadow:  0 10px 15px gainsboro;
+        }
+
+        .title {
+          width: 100%;
+          text-align: center;
+          font-size: 27rpx;
+          color: #333333;
+          padding: 20rpx 0;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .more {
+        font-size: 27rpx;
+        margin-bottom: 30rpx;
+        color: #185ee0;
+        border: 1px solid #185ee0;
+        border-radius: 50rpx;
+        width: 100%;
+        padding: 22rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+
+
+
+
+
+
+  .downInfo {
+    padding: 40rpx 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #333333;
+    color: #fff;
+
+    .top, .down {
+      width: 100%;
+      padding: 30rpx 0;
+
+      text {
+        line-height: 1.5;
+        display: block;
+        width: 100%;
+        font-size: 25rpx;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

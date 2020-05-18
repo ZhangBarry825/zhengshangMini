@@ -1,0 +1,205 @@
+.news-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+.news-container .top-holder {
+  height: 80rpx;
+  width: 100%;
+}
+.news-container .logo-border {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  padding: 30rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.news-container .logo-border .logo-img {
+  width: 146rpx;
+  height: 35rpx;
+}
+.news-container .logo-border .menu-img {
+  width: 30rpx;
+  height: 26rpx;
+}
+.news-container .items-box {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.38);
+  box-sizing: border-box;
+}
+.news-container .items-box .logo-box {
+  background-color: white;
+  padding: 30rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.news-container .items-box .menuItems {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.news-container .items-box .menuItems .item {
+  font-size: 24rpx;
+  color: #333333;
+  width: 100%;
+  text-align: center;
+  padding: 27rpx 0;
+  box-sizing: border-box;
+  border-top: 0.333333px solid gainsboro;
+}
+.news-container .items-box .menuItems .item:after {
+  content: '';
+  border: 1px solid #999;
+  height: 200%;
+  width: 200%;
+  -webkit-transform: scale(0.5);
+  transform: 0.5;
+  transform-origin: 0 0;
+  -webkit-transform: 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.news-container .items-box .logo-img {
+  width: 146rpx;
+  height: 35rpx;
+}
+.news-container .items-box .menu-img {
+  width: 30rpx;
+  height: 26rpx;
+}
+.news-container .background {
+  width: 100%;
+  height: 268rpx;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-container .background .backImg {
+  position: absolute;
+  width: 100%;
+  height: 268rpx;
+  z-index: -1;
+}
+.news-container .background .backGray {
+  position: absolute;
+  width: 100%;
+  height: 268rpx;
+  z-index: -1;
+  background-color: rgba(51, 51, 51, 0.31);
+}
+.news-container .background .content1 {
+  width: 411rpx;
+  height: 200rpx;
+}
+.news-container .background .content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+.news-container .background .content2 .text {
+  margin-bottom: 20rpx;
+  font-size: 33rpx;
+  letter-spacing: 5rpx;
+}
+.news-container .caseContent {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx;
+}
+.news-container .caseContent .buttons {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+.news-container .caseContent .buttons .button {
+  font-size: 25rpx;
+  padding: 15rpx 30rpx;
+  border-radius: 50rpx;
+  margin-bottom: 20rpx;
+}
+.news-container .caseContent .buttons .selected {
+  color: #fff;
+  background-color: #f5ce30;
+}
+.news-container .caseContent .phones {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.news-container .caseContent .phones .phone {
+  margin-bottom: 30rpx;
+  width: 335rpx;
+}
+.news-container .caseContent .phones .phone image {
+  border-radius: 20rpx;
+  width: 335rpx;
+  height: 340rpx;
+  box-shadow: 0 0 15px gainsboro;
+}
+.news-container .caseContent .phones .phone .title {
+  width: 100%;
+  text-align: center;
+  font-size: 27rpx;
+  color: #333333;
+  padding: 20rpx 0;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news-container .caseContent .phones .more {
+  font-size: 27rpx;
+  margin-bottom: 30rpx;
+  color: #185ee0;
+  border: 1px solid #185ee0;
+  border-radius: 50rpx;
+  width: 100%;
+  padding: 22rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-container .downInfo {
+  padding: 40rpx 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #333333;
+  color: #fff;
+}
+.news-container .downInfo .top,
+.news-container .downInfo .down {
+  width: 100%;
+  padding: 30rpx 0;
+}
+.news-container .downInfo .top text,
+.news-container .downInfo .down text {
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  font-size: 25rpx;
+}

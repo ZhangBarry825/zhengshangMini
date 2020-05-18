@@ -28,7 +28,7 @@
   height: 26rpx;
 }
 .home-container .items-box {
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 5;
   width: 100%;
@@ -107,7 +107,11 @@
 .home-container .swiper-box .swiper-item .backImg {
   position: absolute;
   width: 100%;
+  height: 330rpx;
   z-index: -1;
+  background-size: cover;
+  background-position: 20% 50%;
+  background-repeat: no-repeat;
 }
 .home-container .swiper-box .swiper-item .left {
   display: flex;
@@ -155,15 +159,11 @@
   width: 100%;
   box-sizing: border-box;
   background-color: #fcfcfc;
-}
-.home-container .service .items .line {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 35rpx;
   flex-wrap: wrap;
 }
-.home-container .service .items .line .item {
+.home-container .service .items .item {
   width: 330rpx;
   height: 400rpx;
   display: flex;
@@ -174,12 +174,13 @@
   box-sizing: border-box;
   border-radius: 5rpx;
   box-shadow: 0 0 30rpx #d8d8d8;
+  margin-bottom: 35rpx;
 }
-.home-container .service .items .line .item .img {
+.home-container .service .items .item .img {
   width: 160rpx;
   height: 160rpx;
 }
-.home-container .service .items .line .item .title {
+.home-container .service .items .item .title {
   font-size: 29rpx;
   padding: 20rpx 0;
   max-width: 300rpx;
@@ -187,7 +188,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.home-container .service .items .line .item .describe {
+.home-container .service .items .item .describe {
   font-size: 23rpx;
   color: #666666;
   line-height: 35rpx;
@@ -228,7 +229,7 @@
   justify-content: space-between;
 }
 .home-container .example .buttons .button {
-  font-size: 23rpx;
+  font-size: 25rpx;
   padding: 15rpx 30rpx;
   border-radius: 50rpx;
   margin-bottom: 20rpx;
@@ -248,23 +249,33 @@
 }
 .home-container .example .phones .phone {
   margin-bottom: 30rpx;
+  width: 335rpx;
 }
 .home-container .example .phones .phone image {
-  width: 196rpx;
-  height: 391rpx;
+  border-radius: 20rpx;
+  width: 335rpx;
+  height: 340rpx;
+  box-shadow: 0 0 15px gainsboro;
 }
 .home-container .example .phones .phone .title {
-  font-size: 23rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 27rpx;
   color: #333333;
-  padding: 10rpx 0;
+  padding: 20rpx 0;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .home-container .example .phones .more {
+  font-size: 27rpx;
   margin-bottom: 30rpx;
   color: #185ee0;
   border: 1px solid #185ee0;
   border-radius: 50rpx;
   width: 100%;
-  padding: 20rpx;
+  padding: 22rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,8 +438,11 @@
   margin-bottom: 40rpx;
 }
 .home-container .advantage .items .item .img1 {
-  width: 210rpx;
-  height: 152rpx;
+  width: 150rpx;
+  height: 170rpx;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .home-container .advantage .items .item .img2 {
   width: 150rpx;
