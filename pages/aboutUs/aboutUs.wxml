@@ -2,21 +2,21 @@
 <view class="news-container">
     <view class="top-holder"></view>
     <view class="logo-border" wx:if="{{!isMenuShow}}">
-        <image class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="goHome" class="logo-img" src="/static/images/logo.png"></image>
         <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
     </view>
     <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
         <view class="logo-box">
-            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="logo-img" src="/static/images/logo.png" bind:tap="goHome"></image>
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
-            <view class="item">首页</view>
-            <view class="item">业务领域</view>
-            <view class="item">客户案例</view>
-            <view class="item">新闻中心</view>
-            <view class="item">关于我们</view>
-            <view class="item">联系我们</view>
+            <view class="item" bind:tap="goHome">首页</view>
+            <view class="item" bind:tap="goToBusinessArea">业务领域</view>
+            <view class="item" bind:tap="goToCases">客户案例</view>
+            <view class="item" bind:tap="goToNewsCenter">新闻中心</view>
+            <view class="item" bind:tap="goToAboutUs">关于我们</view>
+            <view class="item" bind:tap="goToContactUs">联系我们</view>
         </view>
     </view>
 
@@ -51,9 +51,11 @@
         <view class="en">ABOUT US</view>
 
         <view class="content-box">
-            <image src="/static/images/us.png"></image>
-            <view class="text">郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</view>
-            <view class="text">我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</view>
+            <image mode="aspectFill" src="{{aboutUs.url}}"></image>
+<!--            <view class="text">郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</view>-->
+<!--            <view class="text">我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</view>-->
+            <import src="../../utils/wxParse/wxParse.wxml"/>
+            <template is="wxParse" data="{{wxParseData:aboutUsText.nodes}}"/>
         </view>
     </view>
 
@@ -91,10 +93,9 @@
             CORPORATE ENVIRONMENT
         </view>
         <view class="imgs">
-            <image mode="aspectFill" src="/static/images/en1.png"></image>
-            <image mode="aspectFill" src="/static/images/en2.png"></image>
-            <image mode="aspectFill" src="/static/images/en3.png"></image>
+            <image mode="aspectFill" src="{{item}}" wx:for-index="idx" wx:for-item="item" wx:for="{{imageData.smallImageUrl}}"></image>
         </view>
+        <image class="bigImage" mode="widthFix" src="{{imageData.bigImageUrl}}"></image>
     </view>
 
     <view class="downInfo">

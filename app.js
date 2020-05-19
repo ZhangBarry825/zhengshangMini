@@ -68,7 +68,35 @@ App({
                     reject(res);//Promise返回失败
                 },
                 complete() {
-                    console.log(url+'调用完成')
+                    //console.log(url+'调用完成')
+                    wx.hideLoading({})
+                }
+            })
+
+        })
+    },
+    postData(url,data) {
+        wx.showLoading({
+            title: '加载中',
+        })
+
+        return new Promise((resolve, reject) => {
+
+            wx.request({//这里是请求话不多说
+                url: this.globalData.baseUrl + url,
+                data: data,
+                header: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                method: 'post',
+                success: function (res) {//正确的时候
+                    resolve(res)//Promise返回成功
+                },
+                fail: function (res) {//错误的时候
+                    reject(res);//Promise返回失败
+                },
+                complete() {
+                    //console.log(url+'调用完成')
                     wx.hideLoading({})
                 }
             })

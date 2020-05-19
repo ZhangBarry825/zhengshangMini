@@ -7,16 +7,16 @@
     </view>
     <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
         <view class="logo-box">
-            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="logo-img" src="/static/images/logo.png" bind:tap="goHome"></image>
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
-            <view class="item">首页</view>
-            <view class="item">业务领域</view>
-            <view class="item">客户案例</view>
-            <view class="item">新闻中心</view>
-            <view class="item">关于我们</view>
-            <view class="item">联系我们</view>
+            <view class="item" bind:tap="goHome">首页</view>
+            <view class="item" bind:tap="goToBusinessArea">业务领域</view>
+            <view class="item" bind:tap="goToCases">客户案例</view>
+            <view class="item" bind:tap="goToNewsCenter">新闻中心</view>
+            <view class="item" bind:tap="goToAboutUs">关于我们</view>
+            <view class="item" bind:tap="goToContactUs">联系我们</view>
         </view>
     </view>
 
@@ -42,10 +42,10 @@
                 <view class="text">项目需求</view>
             </view>
             <view class="formBox">
-                <input type="text" class="input" placeholder="请输入姓名"/>
-                <input type="number" maxlength="{{11}}" class="input" placeholder="请输入手机号码"/>
-                <textarea class="textarea" placeholder="请输入简单需求（如网站建设、APP开发、软件开发、小程序开发等）"></textarea>
-                <view class="confirm">
+                <input value="" bindinput="updateName" type="text" class="input" placeholder="请输入姓名"/>
+                <input value="" bindinput="updatePhoneNum" type="number" maxlength="{{11}}" class="input" placeholder="请输入手机号码"/>
+                <textarea value="" bindinput="updateNeeds" class="textarea" placeholder="请输入简单需求（如网站建设、APP开发、软件开发、小程序开发等）"></textarea>
+                <view class="confirm" bind:tap="submitForm">
                     免费获取项目方案和报价
                 </view>
             </view>

@@ -2,21 +2,21 @@
 <view class="home-container">
     <view class="top-holder"></view>
     <view class="logo-border" wx:if="{{!isMenuShow}}">
-        <image class="logo-img" src="/static/images/logo.png"></image>
+        <image bind:tap="goHome" class="logo-img" src="/static/images/logo.png"></image>
         <image bind:tap="showMenu" class="menu-img" src="/static/images/menu.png"></image>
     </view>
     <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu" >
         <view class="logo-box">
-            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="logo-img" src="/static/images/logo.png" bind:tap="goHome"></image>
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
             <view class="item" bind:tap="goHome">首页</view>
-            <view class="item" >业务领域</view>
-            <view class="item">客户案例</view>
-            <view class="item">新闻中心</view>
-            <view class="item">关于我们</view>
-            <view class="item">联系我们</view>
+            <view class="item" bind:tap="goToBusinessArea">业务领域</view>
+            <view class="item" bind:tap="goToCases">客户案例</view>
+            <view class="item" bind:tap="goToNewsCenter">新闻中心</view>
+            <view class="item" bind:tap="goToAboutUs">关于我们</view>
+            <view class="item" bind:tap="goToContactUs">联系我们</view>
         </view>
     </view>
     <view class="swiper-box">
@@ -29,7 +29,7 @@
                         <view class="backImg" style="background-image: url({{item.url}})"></view>
                         <view class="left">
                             <view class="top">{{item.text}}</view>
-                            <view class="down" wx:if="{{idx===0}}">立即咨询</view>
+                            <view class="down" wx:if="{{idx===0}}" bind:tap="goToContactUs">立即咨询</view>
                         </view>
                         <view class="right">
 <!--                            <image src="/static/images/back1.png"></image>-->
@@ -56,7 +56,7 @@
         <view class="title">客户案例</view>
         <view class="en">CUSTOMER CASE</view>
         <view class="buttons">
-            <view class="button {{ idx==0?'selected':''}}" id="{{idx}}" bind:tap="selectGroup" wx:for="{{customerCase}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+            <view class="button {{ idx==0?'selected':''}}" data-index="{{idx}}" bind:tap="selectGroup" wx:for="{{customerCase}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
                 {{item.groupName}}
             </view>
         </view>
@@ -150,36 +150,11 @@
         <view class="title">合作伙伴</view>
         <view class="en">PARTNER</view>
         <view class="items">
-            <view class="item">
-                <image class="img1" src="/static/images/pa1.png"></image>
+            <view class="item" wx:for="{{partner}}" wx:for-item="item" wx:for-index="idx" wx:key="key"  style="background-image: url({{item.url}})">
+<!--                <image mode="widthFix" class="img1" src="{{item.url}}"></image>-->
+<!--                <view class="img1" style="background-image: url({{item.url}})"></view>-->
             </view>
-            <view class="item">
-                <image class="img2" src="/static/images/pa2.png"></image>
-            </view>
-            <view class="item">
-                <image class="img3" src="/static/images/pa3.png"></image>
-            </view>
-            <view class="item">
-                <image class="img4" src="/static/images/pa4.png"></image>
-            </view>
-            <view class="item">
-                <image class="img5" src="/static/images/pa5.png"></image>
-            </view>
-            <view class="item">
-                <image class="img6" src="/static/images/pa6.png"></image>
-            </view>
-            <view class="item">
-                <image class="img7" src="/static/images/pa7.png"></image>
-            </view>
-            <view class="item">
-                <image class="img8" src="/static/images/pa8.png"></image>
-            </view>
-            <view class="item">
-                <image class="img9" src="/static/images/pa9.png"></image>
-            </view>
-            <view class="item">
-                <image class="img10" src="/static/images/pa10.png"></image>
-            </view>
+
         </view>
     </view>
     <view class="aboutus">
@@ -187,9 +162,11 @@
         <view class="en">ABOUT US</view>
 
         <view class="content-box">
-            <image src="/static/images/us.png"></image>
-            <view class="text">郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</view>
-            <view class="text">我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</view>
+            <image mode="aspectFill" src="{{aboutUs.url}}"></image>
+<!--            <view class="text">郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、ERP系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。</view>-->
+<!--            <view class="text">我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会与挑战，不断精进。团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨以高效而良好的服务为客户切实节约成本、创造价值。</view>-->
+            <import src="../../utils/wxParse/wxParse.wxml"/>
+            <template is="wxParse" data="{{wxParseData:aboutUsText.nodes}}"/>
         </view>
 
     </view>

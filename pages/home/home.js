@@ -1,62 +1,73 @@
 // pages/home/home.js
+var WxParse = require('../../utils/wxParse/wxParse.js');
 const app = getApp()
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        buttonSelected:false,
-        background: ['demo-text-1', 'demo-text-2', 'demo-text-3','demo-text-4'],
+        buttonSelected: false,
+        background: ['demo-text-1', 'demo-text-2', 'demo-text-3', 'demo-text-4'],
         indicatorDots: true, //是否显示面板指示点
         vertical: false,
         autoplay: false,
         interval: 2000,
         duration: 500,
 
-        nowGroup:0,
+        nowGroup: 0,
 
-        services:[],
-        customerCase:[],
+        services: [],
+        customerCase: [],
 
 
-        isMenuShow:false,
+        isMenuShow: false,
     },
-    selectGroup(num){
-        console.log(num.currentTarget)
+    selectGroup(num) {
+        //console.log(num.currentTarget)
         this.setData({
-            nowGroup:parseInt(num.currentTarget.id)
+            nowGroup: parseInt(num.currentTarget.dataset.index)
         })
         wx.navigateTo({
-            url: '/pages/cases/cases?group='+num.currentTarget.id,
+            url: '/pages/cases/cases?group=' + parseInt(num.currentTarget.dataset.index),
         })
 
     },
-    goToNewsDetail(item){
+    goToNewsDetail(item) {
 
-        let path='/pages/newsDetail/newsDetail?title='+item.currentTarget.dataset.item.title
-        console.log(path,123)
+        let path = '/pages/newsDetail/newsDetail?title=' + item.currentTarget.dataset.item.title
+        //console.log(path,123)
         app.navigateTo(path)
     },
-    goHome(){
-        console.log('回到主页')
+    goHome() {
         app.goHome()
     },
-
-    goToCases(){
-        app.navigateTo('/pages/cases/cases')
+    goToBusinessArea() {
+        app.navigateTo('/pages/businessArea/businessArea')
     },
-    goToCaseDetail(item){
-        let groupName=this.data.customerCase[this.data.nowGroup].groupName
-        let caseName=this.data.customerCase[this.data.nowGroup].caseGroup[item.currentTarget.id].caseName
+    goToNewsCenter() {
+        app.navigateTo('/pages/newsCenter/newsCenter')
+    },
+    goToCases() {
+        app.navigateTo('/pages/cases/cases?group=0')
+    },
+    goToAboutUs() {
+        app.navigateTo('/pages/aboutUs/aboutUs')
+    },
+    goToContactUs() {
+        app.navigateTo('/pages/contactUs/contactUs')
+    },
+    goToCaseDetail(item) {
+        let groupName = this.data.customerCase[this.data.nowGroup].groupName
+        let caseName = this.data.customerCase[this.data.nowGroup].caseGroup[item.currentTarget.id].caseName
 
-        let path='/pages/caseDetail/caseDetail?caseName='+caseName+'&groupName='+groupName
-        console.log(path,123)
+        let path = '/pages/caseDetail/caseDetail?caseName=' + caseName + '&groupName=' + groupName
+        //console.log(path,123)
         app.navigateTo(path)
     },
-    showMenu(){
-        let that=this
+    showMenu() {
+        let that = this
         this.setData({
-            isMenuShow:!that.data.isMenuShow
+            isMenuShow: !that.data.isMenuShow
         })
     },
 
@@ -71,33 +82,46 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        let that=this
-        app.fetchData('/index/getSlideshow','get').then(res=>{
+        let that = this
+        app.fetchData('/index/getSlideshow', 'get').then(res => {
             this.setData({
-                background:res.data
+                background: res.data
             })
         })
-        app.fetchData('/index/getOurService','get').then(res=>{
+        app.fetchData('/index/getOurService', 'get').then(res => {
             this.setData({
-                services:res.data
+                services: res.data
             })
         })
-        app.fetchData('/index/getCustomerCase','get').then(res=>{
-            console.log(res.data,123)
+        app.fetchData('/index/getCustomerCase', 'get').then(res => {
+            //console.log(res.data,123)
             this.setData({
-                customerCase:res.data
+                customerCase: res.data
             })
         })
-        app.fetchData('/index/getOurAdvantages','get').then(res=>{
-            console.log(res.data,'advantages')
+        app.fetchData('/index/getOurAdvantages', 'get').then(res => {
+            //console.log(res.data,'advantages')
             this.setData({
-                advantages:res.data
+                advantages: res.data
             })
         })
-        app.fetchData('/index/getNews','get').then(res=>{
-            console.log(res.data,'getNews')
+        app.fetchData('/index/getNews', 'get').then(res => {
+            //console.log(res.data,'getNews')
             this.setData({
-                news:res.data.rightNews
+                news: res.data.rightNews
+            })
+        })
+        app.fetchData('/index/getPartner', 'get').then(res => {
+            //console.log(res.data,'getPartner')
+            this.setData({
+                partner: res.data
+            })
+        })
+        app.fetchData('/index/getAboutUs', 'get').then(res => {
+            //console.log(res.data,'getAboutUs')
+            WxParse.wxParse('aboutUsText', 'html', res.data.text, that, 5);
+            this.setData({
+                aboutUs: res.data
             })
         })
     },

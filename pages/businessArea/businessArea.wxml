@@ -7,16 +7,16 @@
     </view>
     <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
         <view class="logo-box">
-            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="logo-img" src="/static/images/logo.png" bind:tap="goHome"></image>
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
-            <view class="item">首页</view>
-            <view class="item">业务领域</view>
-            <view class="item">客户案例</view>
-            <view class="item">新闻中心</view>
-            <view class="item">关于我们</view>
-            <view class="item">联系我们</view>
+            <view class="item" bind:tap="goHome">首页</view>
+            <view class="item" bind:tap="goToBusinessArea">业务领域</view>
+            <view class="item" bind:tap="goToCases">客户案例</view>
+            <view class="item" bind:tap="goToNewsCenter">新闻中心</view>
+            <view class="item" bind:tap="goToAboutUs">关于我们</view>
+            <view class="item" bind:tap="goToContactUs">联系我们</view>
         </view>
     </view>
 
@@ -32,42 +32,51 @@
     </view>
 
     <view class="busBox">
-        <view class="item1">
-            <view class="left">
-                <image src="/static/images/bu2.png"></image>
+        <view class="item{{(idx+1)%2==0?2:1}}"  wx:for="{{business}}" wx:key="key" wx:for-item="item" wx:for-index="idx">
+            <view class="left" wx:if="{{(idx+1)%2==1}}">
+                <image src="{{item.url}}"></image>
             </view>
-            <view class="right">
-                <view class="title title1">APP开发</view>
-                <view class="des">各行业APP开发，包括直播类、短视频、社区配送、 生活商城、在线教育、健康医疗...</view>
+            <view class="right" wx:if="{{(idx+1)%2==1}}">
+                <view class="title title{{idx+1}}">{{item.title}}</view>
+                <view class="des">{{item.detail}}</view>
             </view>
-        </view>
-        <view class="item2">
-            <view class="left">
-                <view class="title title2">网站建设</view>
-                <view class="des">品牌官网、响应式网站、移动端网站、线上商城、 营销型网站、政府办公网站...</view>
+
+            <view class="left"  wx:if="{{(idx+1)%2!=1}}" >
+                <view class="title title{{idx+1}}">{{item.title}}</view>
+                <view class="des">{{item.detail}}</view>
             </view>
-            <view class="right">
-                <image src="/static/images/bu3.png"></image>
-            </view>
-        </view>
-        <view class="item1">
-            <view class="left">
-                <image src="/static/images/bu4.png"></image>
-            </view>
-            <view class="right">
-                <view class="title title3">小程序开发</view>
-                <view class="des">微信小程序开发、公众号开发、三级分销商城、商 家入驻商城、微网站...</view>
+            <view class="right"  wx:if="{{(idx+1)%2!=1}}" >
+                <image src="{{item.url}}"></image>
             </view>
         </view>
-        <view class="item2">
-            <view class="left">
-                <view class="title title4">系统开发</view>
-                <view class="des">OA办公系统、CRM客户管理系统、企业管理软件、 ERP系统、政府办公系统...</view>
-            </view>
-            <view class="right">
-                <image src="/static/images/bu5.png"></image>
-            </view>
-        </view>
+
+<!--        <view class="item2">-->
+<!--            <view class="left">-->
+<!--                <view class="title title2">{{item.title}}</view>-->
+<!--                <view class="des">{{item.detail}}</view>-->
+<!--            </view>-->
+<!--            <view class="right">-->
+<!--                <image src="{{item.url}}"></image>-->
+<!--            </view>-->
+<!--        </view>-->
+<!--        <view class="item1">-->
+<!--            <view class="left">-->
+<!--                <image src="/static/images/bu4.png"></image>-->
+<!--            </view>-->
+<!--            <view class="right">-->
+<!--                <view class="title title3">小程序开发</view>-->
+<!--                <view class="des">微信小程序开发、公众号开发、三级分销商城、商 家入驻商城、微网站...</view>-->
+<!--            </view>-->
+<!--        </view>-->
+<!--        <view class="item2">-->
+<!--            <view class="left">-->
+<!--                <view class="title title4">系统开发</view>-->
+<!--                <view class="des">OA办公系统、CRM客户管理系统、企业管理软件、 ERP系统、政府办公系统...</view>-->
+<!--            </view>-->
+<!--            <view class="right">-->
+<!--                <image src="/static/images/bu5.png"></image>-->
+<!--            </view>-->
+<!--        </view>-->
     </view>
 
 

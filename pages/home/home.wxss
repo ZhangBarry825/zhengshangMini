@@ -28,7 +28,7 @@
   height: 26rpx;
 }
 .home-container .items-box {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
@@ -59,19 +59,6 @@
   padding: 27rpx 0;
   box-sizing: border-box;
   border-top: 0.333333px solid gainsboro;
-}
-.home-container .items-box .menuItems .item:after {
-  content: '';
-  border: 1px solid #999;
-  height: 200%;
-  width: 200%;
-  -webkit-transform: scale(0.5);
-  transform: 0.5;
-  transform-origin: 0 0;
-  -webkit-transform: 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .home-container .items-box .logo-img {
   width: 146rpx;
@@ -441,7 +428,7 @@
   width: 150rpx;
   height: 170rpx;
   background-position: center center;
-  background-size: cover;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
 .home-container .advantage .items .item .img2 {
@@ -611,23 +598,17 @@
   margin-bottom: 35rpx;
   overflow: hidden;
   position: relative;
-}
-.home-container .partner .items .item .img1,
-.home-container .partner .items .item .img2,
-.home-container .partner .items .item .img3,
-.home-container .partner .items .item .img4,
-.home-container .partner .items .item .img5,
-.home-container .partner .items .item .img6,
-.home-container .partner .items .item .img7,
-.home-container .partner .items .item .img8,
-.home-container .partner .items .item .img9,
-.home-container .partner .items .item .img10 {
-  margin-bottom: 30rpx;
-  position: absolute;
+  background-size: 45%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .home-container .partner .items .item .img1 {
-  width: 191rpx;
-  height: 191rpx;
+  position: absolute;
+  width: 200rpx;
+  max-width: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .home-container .partner .items .item .img2 {
   width: 109rpx;
@@ -709,8 +690,15 @@
   width: 100%;
   box-sizing: border-box;
 }
+.home-container .aboutus .content-box .wxParse-inline {
+  text-indent: 2em;
+  padding: 10rpx 0;
+  font-size: 29rpx;
+  line-height: 1.5;
+}
 .home-container .aboutus .content-box image {
   width: 100%;
+  border-radius: 20rpx;
 }
 .home-container .aboutus .content-box .text {
   text-indent: 2em;

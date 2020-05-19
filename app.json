@@ -1,13 +1,13 @@
 {
   "pages":[
     "pages/home/home",
-    "pages/businessArea/businessArea",
     "pages/contactUs/contactUs",
+    "pages/aboutUs/aboutUs",
+    "pages/businessArea/businessArea",
     "pages/caseDetail/caseDetail",
     "pages/cases/cases",
-    "pages/aboutUs/aboutUs",
-    "pages/newsDetail/newsDetail",
     "pages/newsCenter/newsCenter",
+    "pages/newsDetail/newsDetail",
     "pages/index/index",
     "pages/logs/logs"
   ],

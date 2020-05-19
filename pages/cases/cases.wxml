@@ -7,16 +7,16 @@
     </view>
     <view class="items-box" wx:if="{{isMenuShow}}" bind:tap="showMenu">
         <view class="logo-box">
-            <image class="logo-img" src="/static/images/logo.png"></image>
+            <image class="logo-img" src="/static/images/logo.png" bind:tap="goHome"></image>
             <image class="menu-img" src="/static/images/menu.png"></image>
         </view>
         <view class="menuItems">
-            <view class="item">首页</view>
-            <view class="item">业务领域</view>
-            <view class="item">客户案例</view>
-            <view class="item">新闻中心</view>
-            <view class="item">关于我们</view>
-            <view class="item">联系我们</view>
+            <view class="item" bind:tap="goHome">首页</view>
+            <view class="item" bind:tap="goToBusinessArea">业务领域</view>
+            <view class="item" bind:tap="goToCases">客户案例</view>
+            <view class="item" bind:tap="goToNewsCenter">新闻中心</view>
+            <view class="item" bind:tap="goToAboutUs">关于我们</view>
+            <view class="item" bind:tap="goToContactUs">联系我们</view>
         </view>
     </view>
 
@@ -34,13 +34,13 @@
 
     <view class="caseContent">
         <view class="buttons">
-            <view class="button {{ idx==nowGroup?'selected':''}}" id="{{idx}}" bind:tap="selectGroup" wx:for="{{customerCase}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
-                {{item.groupName}}
+            <view class="button {{ idx==nowGroup?'selected':''}}" data-index="{{idx}}" bind:tap="selectGroup" wx:for="{{groups}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+                {{item}}
             </view>
         </view>
 
         <view class="phones">
-            <view class="phone" wx:for="{{customerCase[nowGroup].caseGroup}}" wx:for-item="item"  wx:for-index="idx" wx:key="key">
+            <view class="phone" wx:for="{{customerCase}}" data-item="{{item}}" wx:for-item="item"  wx:for-index="idx" wx:key="key" bind:tap="goToCaseDetail">
                 <image mode="aspectFill" src="{{item.url}}"></image>
                 <view class="title">{{item.caseName}}</view>
             </view>
