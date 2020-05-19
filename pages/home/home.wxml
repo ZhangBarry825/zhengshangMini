@@ -44,7 +44,7 @@
         <view class="en">OUR SERVICES</view>
         <view class="items">
 
-                <view class="item" wx:for="{{services}}" wx:for-item="item" wx:if="{{idx<8}}"  wx:for-index="idx" wx:key="idx">
+                <view class="item" wx:for="{{services}}" wx:for-item="item" wx:if="{{idx<4}}"  wx:for-index="idx" wx:key="idx">
                     <image class="img" src="{{item.url}}"></image>
                     <view class="title">{{item.title}}</view>
                     <view class="describe">{{item.text}}</view>

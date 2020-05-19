@@ -207,13 +207,21 @@
   letter-spacing: 3rpx;
   padding-bottom: 30rpx;
 }
+.home-container .example .buttons::-webkit-scrollbar {
+  /* Chrome Safari */
+  display: none;
+}
 .home-container .example .buttons {
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Firefox */
+  overflow: scroll;
 }
 .home-container .example .buttons .button {
   font-size: 25rpx;

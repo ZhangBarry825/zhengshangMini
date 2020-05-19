@@ -110,14 +110,22 @@
   box-sizing: border-box;
   padding: 30rpx 30rpx;
 }
+.news-container .caseContent .buttons::-webkit-scrollbar {
+  /* Chrome Safari */
+  display: none;
+}
 .news-container .caseContent .buttons {
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   padding: 15rpx 0;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Firefox */
+  overflow: scroll;
 }
 .news-container .caseContent .buttons .button {
   font-size: 25rpx;
