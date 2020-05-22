@@ -102,7 +102,11 @@
         <view class="top">
             <text>QQ邮箱 ：943870975@qq.com</text>
             <text>联系电话：15238699705</text>
-            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
+                        <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521/1522</text>
+            <text>分部：弘廷科技</text>
+            <text>办公地址：郑州市管城区航海东路2号55号楼22层307号</text>
+            <text>分部：智亘科技</text>
+            <text>办公地址：郑州市郑东新区金水东路绿地新都会6号楼1521</text>
         </view>
         <view class="down">
             <text>COPYRIGHT 2020 河南正尚网络科技有限公司版权所有</text>
